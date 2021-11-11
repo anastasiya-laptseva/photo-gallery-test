@@ -17,6 +17,8 @@
 		0EED37F6273D0C4C003C8475 /* photo_gallery_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED37F5273D0C4C003C8475 /* photo_gallery_testTests.swift */; };
 		0EED3800273D0C4D003C8475 /* photo_gallery_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED37FF273D0C4D003C8475 /* photo_gallery_testUITests.swift */; };
 		0EED3802273D0C4D003C8475 /* photo_gallery_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED3801273D0C4D003C8475 /* photo_gallery_testUITestsLaunchTests.swift */; };
+		0EED380F273D1F2D003C8475 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EED380E273D1F2D003C8475 /* Slide.swift */; };
+		0EED3811273D1FDD003C8475 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EED3810273D1FDD003C8475 /* Slide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0EED37FB273D0C4D003C8475 /* photo-gallery-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gallery-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EED37FF273D0C4D003C8475 /* photo_gallery_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gallery_testUITests.swift; sourceTree = "<group>"; };
 		0EED3801273D0C4D003C8475 /* photo_gallery_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gallery_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0EED380E273D1F2D003C8475 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		0EED3810273D1FDD003C8475 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				0EED37DB273D0C47003C8475 /* AppDelegate.swift */,
 				0EED37DD273D0C47003C8475 /* SceneDelegate.swift */,
 				0EED37DF273D0C47003C8475 /* ViewController.swift */,
+				0EED380E273D1F2D003C8475 /* Slide.swift */,
+				0EED3810273D1FDD003C8475 /* Slide.xib */,
 				0EED37E1273D0C47003C8475 /* Main.storyboard */,
 				0EED37E7273D0C4C003C8475 /* Assets.xcassets */,
 				0EED37E9273D0C4C003C8475 /* LaunchScreen.storyboard */,
@@ -237,6 +243,7 @@
 				0EED37EB273D0C4C003C8475 /* LaunchScreen.storyboard in Resources */,
 				0EED37E8273D0C4C003C8475 /* Assets.xcassets in Resources */,
 				0EED37E3273D0C47003C8475 /* Main.storyboard in Resources */,
+				0EED3811273D1FDD003C8475 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,7 @@
 				0EED37DC273D0C47003C8475 /* AppDelegate.swift in Sources */,
 				0EED37DE273D0C47003C8475 /* SceneDelegate.swift in Sources */,
 				0EED37E6273D0C47003C8475 /* photo_gallery_test.xcdatamodeld in Sources */,
+				0EED380F273D1F2D003C8475 /* Slide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

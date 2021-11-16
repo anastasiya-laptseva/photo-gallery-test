@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1RQ-o2-etq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -8,41 +8,101 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="W94-z9-pzK">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="photo_gallery_test" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="1RQ-o2-etq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GS5-rg-bA0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MyA-it-Fer" kind="relationship" relationship="rootViewController" id="AuC-PR-yMV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SH1-LE-CRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371" y="10"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="5Ao-Fo-LdM">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="MyA-it-Fer" customClass="PageViewController" customModule="photo_gallery_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ay3-PC-ogS"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2o-nS-A8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="9"/>
+        </scene>
+        <!--Photo Controller-->
+        <scene sceneID="EUV-WO-JTu">
+            <objects>
+                <viewController storyboardIdentifier="photo_controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rfN-Sb-Fzc" customClass="PhotoController" customModule="photo_gallery_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Znn-0a-RkB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-D4-v2G">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QuA-ED-Bxd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mho-yj-plr">
-                                <rect key="frame" x="121" y="757.5" width="172.5" height="26"/>
-                                <color key="pageIndicatorTintColor" red="0.5272146463394165" green="0.55477219820022583" blue="0.91364377737045288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.071971751749515533" green="0.16702699661254883" blue="0.82258236408233643" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ti-r7-A4v" userLabel="user_name">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wyk-fD-w1D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-to-meM">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-89-DKf" userLabel="user_url">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="userUrlAction:" destination="rfN-Sb-Fzc" eventType="touchUpInside" id="3qU-to-VI1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-Ce-d6U" userLabel="photo_url">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="photoUrlAction:" destination="rfN-Sb-Fzc" eventType="touchUpInside" id="XZT-sB-6an"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oM1-g6-WPG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Kuo-HC-sLc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kd4-D4-v2G" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="K2q-VQ-uDt"/>
-                            <constraint firstItem="kd4-D4-v2G" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NPE-aa-UNZ"/>
-                            <constraint firstItem="Mho-yj-plr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Xoj-fZ-DLW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mho-yj-plr" secondAttribute="bottom" multiplier="1.1" id="g1X-eC-r6r"/>
-                            <constraint firstItem="kd4-D4-v2G" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="rTo-rg-CO2"/>
-                            <constraint firstItem="kd4-D4-v2G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vaW-F1-bnt"/>
+                            <constraint firstItem="Kuo-HC-sLc" firstAttribute="bottom" secondItem="QuA-ED-Bxd" secondAttribute="bottom" id="45M-8f-Jl2"/>
+                            <constraint firstItem="7Ti-r7-A4v" firstAttribute="leading" secondItem="Kuo-HC-sLc" secondAttribute="leading" id="MPI-Rd-dDB"/>
+                            <constraint firstItem="QuA-ED-Bxd" firstAttribute="top" secondItem="Kuo-HC-sLc" secondAttribute="top" id="NST-hS-XuR"/>
+                            <constraint firstItem="QuA-ED-Bxd" firstAttribute="leading" secondItem="Kuo-HC-sLc" secondAttribute="leading" id="OkF-Tp-LCQ"/>
+                            <constraint firstItem="QuA-ED-Bxd" firstAttribute="trailing" secondItem="Kuo-HC-sLc" secondAttribute="trailing" id="PYR-EN-JDA"/>
+                            <constraint firstItem="7Ti-r7-A4v" firstAttribute="top" secondItem="Kuo-HC-sLc" secondAttribute="top" id="RYm-Pp-nnv"/>
+                            <constraint firstItem="Kuo-HC-sLc" firstAttribute="trailing" secondItem="YHe-to-meM" secondAttribute="trailing" id="eWG-GD-0zm"/>
+                            <constraint firstItem="Kuo-HC-sLc" firstAttribute="trailing" secondItem="7Ti-r7-A4v" secondAttribute="trailing" id="kqD-B6-t9I"/>
+                            <constraint firstItem="YHe-to-meM" firstAttribute="leading" secondItem="Kuo-HC-sLc" secondAttribute="leading" id="s1a-05-R2A"/>
+                            <constraint firstItem="Kuo-HC-sLc" firstAttribute="bottom" secondItem="YHe-to-meM" secondAttribute="bottom" id="xoj-SH-dfK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="kd4-D4-v2G" id="fOZ-pm-BT0"/>
+                        <outlet property="photoUrl" destination="ZIa-Ce-d6U" id="TCY-Lh-2eW"/>
+                        <outlet property="userName" destination="7Ti-r7-A4v" id="E86-e0-XSz"/>
+                        <outlet property="userUrl" destination="fM6-89-DKf" id="bTd-xp-Elg"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwY-B1-Lrm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="72"/>
+            <point key="canvasLocation" x="84" y="711"/>
         </scene>
     </scenes>
     <resources>

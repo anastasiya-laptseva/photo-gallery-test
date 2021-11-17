@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,8 +14,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-f0-rb9" userLabel="ImageView">
-                    <rect key="frame" x="0.0" y="1" width="375" height="664.5"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-g2-FJG">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="color" systemColor="labelColor"/>
+                </activityIndicatorView>
+                <imageView userInteractionEnabled="NO" tag="111" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-f0-rb9" userLabel="ImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-3U-9Q6" userLabel="Description">
                     <rect key="frame" x="50" y="592" width="275" height="75"/>
@@ -54,10 +59,12 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="oNW-g2-FJG" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="AJy-gX-4dX"/>
                 <constraint firstItem="QDx-f0-rb9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BMQ-Yb-Ug4"/>
                 <constraint firstItem="zyz-yE-tYh" firstAttribute="trailing" secondItem="QDx-f0-rb9" secondAttribute="trailing" constant="-50" id="Dvw-m6-sB6"/>
                 <constraint firstItem="zyz-yE-tYh" firstAttribute="top" secondItem="QDx-f0-rb9" secondAttribute="top" id="L4X-kd-2LF"/>
                 <constraint firstItem="M3Z-3U-9Q6" firstAttribute="leading" secondItem="QDx-f0-rb9" secondAttribute="leading" constant="50" id="Oc3-iZ-LBH"/>
+                <constraint firstItem="oNW-g2-FJG" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="UZW-ZV-hiT"/>
                 <constraint firstItem="QDx-f0-rb9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fys-bs-ZI0"/>
                 <constraint firstItem="QDx-f0-rb9" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="g4n-2V-BI9"/>
                 <constraint firstItem="zyz-yE-tYh" firstAttribute="leading" secondItem="QDx-f0-rb9" secondAttribute="leading" constant="50" id="lle-U7-lWi"/>
@@ -66,6 +73,7 @@
                 <constraint firstItem="M3Z-3U-9Q6" firstAttribute="trailing" secondItem="QDx-f0-rb9" secondAttribute="trailing" constant="-50" id="yLJ-Zg-BoK"/>
             </constraints>
             <connections>
+                <outlet property="activityIndicator" destination="oNW-g2-FJG" id="Oim-HJ-ZSc"/>
                 <outlet property="imageView" destination="QDx-f0-rb9" id="byA-km-a96"/>
                 <outlet property="labelDesc" destination="M3Z-3U-9Q6" id="aYp-tQ-3hO"/>
                 <outlet property="labelTitle" destination="zyz-yE-tYh" id="o8d-aJ-Km2"/>
@@ -74,6 +82,8 @@
         </view>
     </objects>
     <resources>
-        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -35,7 +35,11 @@ public class JsonParce {
                         }
                     }
                 
-                    complection(photos)
+                    let sortedUsers = photos.sorted {
+                        $0.photo.user_name < $1.photo.user_name
+                    }
+                    
+                    complection(sortedUsers)
                 } catch let error as NSError {
                     print("Failed to load: \(error.localizedDescription)")
                     complection(photos)

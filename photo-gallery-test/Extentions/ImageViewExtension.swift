@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFill) {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
         DispatchQueue.global(qos: .userInitiated).async() {
             URLSession.shared.dataTask(with: url) { data, response, error in

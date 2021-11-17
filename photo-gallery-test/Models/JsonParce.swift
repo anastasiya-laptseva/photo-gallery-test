@@ -9,8 +9,8 @@ import UIKit
 
 public class JsonParce {
     
-    func parceJson(complection:@escaping ([Photo])->Void){
-        var photos: [Photo] = []
+    func parceJson(complection:@escaping ([User])->Void){
+        var photos: [User] = []
         
         let urlString = "http://dev.bgsoft.biz/task/credits.json"
         
@@ -29,7 +29,9 @@ public class JsonParce {
                             let value = dictionary[key]
                             let data = try JSONSerialization.data (withJSONObject: value ?? "", options: [])
                             let decodedResult = try JSONDecoder().decode(Photo.self, from: data)
-                            photos.append(decodedResult)
+                            
+                            let user = User(user_key: key, photo: decodedResult)
+                            photos.append(user)
                         }
                     }
                 
@@ -45,26 +47,4 @@ public class JsonParce {
         }.resume()
     }
 }
-    
-    
-
-//do {
-//    if let dictionary =
-//      try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-//        for key in dictionary.keys {
-//            let value = dictionary[key]
-//            let data = try JSONSerialization.data (withJSONObject: value ?? "", options: [])
-//            let decodedResult = try JSONDecoder().decode(Photo.self, from: data)
-//            photos.append(decodedResult)
-//        }
-//    }
-//
-//    completionHandler(photos)
-//} catch let error as NSError {
-//    print("Failed to load: \(error.localizedDescription)")
-//    completionHandler(photos)
-//}
-//completionHandler(photos)
-    
-    
 

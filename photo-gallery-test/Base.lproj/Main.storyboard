@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Qz-VM-Lgk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Onboarding Screen-->
+        <scene sceneID="2SA-MQ-e65">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="7Qz-VM-Lgk" userLabel="Onboarding Screen" customClass="ViewController" customModule="photo_gallery_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AcH-Yu-UFE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSx-nE-9bH">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Qz-VM-Lgk" id="55B-H6-NCe"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZMq-cS-76o">
+                                <rect key="frame" x="121" y="757.5" width="172.5" height="26"/>
+                                <color key="pageIndicatorTintColor" red="0.31764705879999999" green="0.21176470589999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.31764705879999999" green="0.21176470589999999" blue="0.56078431370000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rdK-4d-iBC"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rSx-nE-9bH" firstAttribute="height" secondItem="AcH-Yu-UFE" secondAttribute="height" id="Ocj-Uv-MK7"/>
+                            <constraint firstItem="rSx-nE-9bH" firstAttribute="width" secondItem="AcH-Yu-UFE" secondAttribute="width" id="a0X-wj-x5H"/>
+                            <constraint firstItem="rSx-nE-9bH" firstAttribute="centerY" secondItem="rdK-4d-iBC" secondAttribute="centerY" id="aRk-19-AcV"/>
+                            <constraint firstItem="rSx-nE-9bH" firstAttribute="centerX" secondItem="rdK-4d-iBC" secondAttribute="centerX" id="nXq-Me-9zF"/>
+                            <constraint firstItem="rdK-4d-iBC" firstAttribute="bottom" secondItem="ZMq-cS-76o" secondAttribute="bottom" multiplier="1.1" id="sTW-cl-w7s"/>
+                            <constraint firstItem="ZMq-cS-76o" firstAttribute="centerX" secondItem="rdK-4d-iBC" secondAttribute="centerX" id="tdP-T8-1vt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="ZMq-cS-76o" id="QSJ-JS-KUz"/>
+                        <outlet property="scrollView" destination="rSx-nE-9bH" id="xrw-pK-7HF"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgD-2n-ttw" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="22" y="84"/>
         </scene>
     </scenes>
 </document>
